@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Initialize app_views Blueprint"""
-
+"""Initialize the API views."""
 from flask import Blueprint
+from api.v1.views.amenities import amenities
 
 app_views = Blueprint('app_views', __name__, url_prefix='/api/v1')
 
-# Import all view modules
-from api.v1.views.cities import *  # Import the cities view
+# Register blueprints for all views
+app_views.register(amenities)
